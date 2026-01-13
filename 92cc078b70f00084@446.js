@@ -7,7 +7,7 @@ Based on Mike Bostock's work: https://observablehq.com/@d3/collapsible-tree
 I have modified his program so that it works on Radial Tidy Tree. It also has slow animation functionality working. Just click a black node while pressing the altKey("option" key for Mac OS-X).`
 )}
 
-function _chart(d3,data,width,tree,radial,event)
+function _chart(d3,data,width,tree,radial)
 {
   const root = d3.hierarchy(data);
 
@@ -161,7 +161,7 @@ function _chart(d3,data,width,tree,radial,event)
       d.y0 = d.y;
     });
   }
-  update(event, root);
+  update(null, root);
 
   return svg.node();
 }
@@ -200,7 +200,7 @@ export default function define(runtime, observer) {
   ]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], _1);
-  main.variable(observer("chart")).define("chart", ["d3","data","width","tree","radial","event"], _chart);
+  main.variable(observer("chart")).define("chart", ["d3","data","width","tree","radial"], _chart);
   main.variable(observer("radial")).define("radial", ["d3"], _radial);
   main.variable(observer("tree")).define("tree", ["d3","radius"], _tree);
   main.variable(observer("data")).define("data", ["FileAttachment"], _data);
