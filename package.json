@@ -1,0 +1,14 @@
+{
+  "name": "92cc078b70f00084",
+  "main": "92cc078b70f00084@446.js",
+  "version": "446.0.0",
+  "homepage": "https://observablehq.com/d/92cc078b70f00084",
+  "author": {
+    "name": "TronsMedia",
+    "url": "https://observablehq.com/@tronsmedia"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
